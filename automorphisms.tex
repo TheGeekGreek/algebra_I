@@ -1,0 +1,67 @@
+\subsection{Automorphisms}
+
+\begin{definition}
+	Let $G$ be a group. For $a \in G$ define 
+
+	\begin{equation}
+		\iota_a: \begin{cases}
+			G \to G\\
+			x \mapsto axa^{-1}
+		\end{cases}
+	\end{equation}
+
+	Further
+
+	\begin{equation}
+		\Inn(G) := \cbr[0]{\iota_a : a \in G}
+	\end{equation}
+\end{definition}
+
+\vspace{2mm}
+
+\begin{lemma}
+	We have $\iota_a \in \Aut(G)$ for any $a \in G$. Furthermore $\Inn(G) \unlhd \Aut(G)$.
+\end{lemma}
+
+\begin{proof}
+	$\iota_a \in \Aut(G)$ and $\Inn(G) \leq \Aut(G)$ is obvious. Let $\iota_a \in \Inn(G)$ and $\varphi \in \Aut(G)$. Then for $x \in G$ 
+
+	\begin{equation*}
+		\varphi\iota_a\varphi^{-1}(x) = \varphi(a \varphi^{-1}(x)a^{-1}) = \varphi(a)x\varphi(a)^{-1}
+	\end{equation*}
+
+	\noindent so $\varphi \iota_{a} \varphi^{-1} = \iota_{\varphi(a)} \in \Inn(G)$.
+\end{proof}
+
+\vspace{2mm}
+
+\begin{lemma}
+	The mapping 
+
+	\begin{equation}
+		\iota: \begin{cases}
+			G \to \Aut(G)\\
+			a \mapsto \iota_a
+		\end{cases}
+	\end{equation}
+
+	\noindent is a homomorphisms. Furthermore $\ker(\iota) = Z(G)$.
+\end{lemma}
+
+\begin{proof}
+	That $\iota \in \Hom(G,\Aut(G))$ is obvious. For $a \in \ker(\iota)$ we must have that $\iota_a = \id$, so $axa^{-1} = x$ for any $x \in G$. Hence $a \in Z(G)$. The converse is trivial.
+\end{proof}
+
+Thus by the first isomorphism theorem we have 
+
+\begin{equation*}
+	G/Z(G) = \Inn(G)
+\end{equation*}
+
+\begin{proposition}
+	Let $G$ be a group and assume $G/Z(G)$ is cyclic. Then $G$ is abelian.
+\end{proposition}
+
+\begin{proof}
+	
+\end{proof}

@@ -79,6 +79,12 @@
 \def\section{\@startsection{section}{1}%
   \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}%
   {\normalfont\bfseries\centering}}
+	\renewcommand\subsection{\@startsection{subsection}{2}%
+    	\z@{.5\linespacing\@plus.7\linespacing}{-.5em}%
+    	{\normalfont\bfseries}}%
+	\renewcommand\subsubsection{\@startsection{subsubsection}{3}%
+    	\z@{.5\linespacing\@plus.7\linespacing}{-.5em}%
+    	{\normalfont\bfseries}}%
 }
 %Formatting title of TOC
 \renewcommand{\contentsnamefont}{\bfseries}
@@ -160,6 +166,11 @@
 \DeclareMathOperator\Log{Log}
 \DeclareMathOperator\Arg{Arg}
 \DeclareMathOperator\sech{sech}
+\DeclareMathOperator\Inn{Inn}
+\DeclareMathOperator\Aut{Aut}
+\DeclareMathOperator\Hom{Hom}
+\DeclareMathOperator\id{id}
+\newcommand{\innerprod}[1]{\left\langle {#1} \right\rangle}
 %\usepackage{hhline}
 %\usepackage{booktabs} 
 %\usepackage{array}
@@ -223,7 +234,12 @@
   topline=false,
   rightline=false,
   leftline=false]{theorem}{Theorem}[section]
-
+\newmdtheoremenv[%
+  backgroundcolor=anti-flashwhite,
+  bottomline=false,
+  topline=false,
+  rightline=false,
+  leftline=false]{corollary}{Corollary}[section]
 \newtheorem*{definition*}{Definition}
 %\newtheorem{definition}{Definition}[section]
 \newtheorem*{lemma*}{Lemma}
@@ -231,7 +247,7 @@
 \newtheorem{Proof}{Proof}[section]
 %\newtheorem{proposition}{Proposition}[section]
 \newtheorem{properties}{Properties}[section]
-\newtheorem{corollary}{Corollary}[section]
+%\newtheorem{corollary}{Corollary}[section]
 \newtheorem*{theorem*}{Theorem}
 %\newtheorem{theorem}{Theorem}[section]
 \newtheorem{example}{Example}[section]

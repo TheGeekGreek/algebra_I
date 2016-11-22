@@ -55,7 +55,7 @@
 Thus by the first isomorphism theorem we have 
 
 \begin{equation*}
-	G/Z(G) = \Inn(G)
+	G/Z(G) \cong \Inn(G)
 \end{equation*}
 
 \begin{proposition}
@@ -63,5 +63,11 @@ Thus by the first isomorphism theorem we have
 \end{proposition}
 
 \begin{proof}
-	
+	Since $G/Z(G)$ is cyclic we have $G/Z(G) = \langle g Z(G) \rangle$ for some $g \in G$. Furthermore, each element of $G/Z(G)$ has the form $(gZ(G))^k = g^kZ(G)$ since $Z(G) \unlhd G$ and $k \in \mathbb{Z}$. Let $x,y \in G$. Since $G/Z(G)$ provides a partition of $G$ we have $x = g^m z$ and $y = g^nz'$ for some $m,n \in \mathbb{Z}$, $z,z' \in Z(G)$. Therefore 
+
+	\begin{equation*}
+		xy = g^mz g^n z' = g^m g^n zz' = g^{m + n}zz' = g^n g^m z z' = g^n g^m z'z = g^n z' g^m z = yx
+	\end{equation*}
+
+	\noindent since center elements commute with every group element.
 \end{proof}

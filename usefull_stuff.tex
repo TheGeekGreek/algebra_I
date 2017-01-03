@@ -1,0 +1,41 @@
+\section{Usefull Stuff}
+\begin{itemize}
+	\item Let $G$ be a group and $H,K \leq G$. Then 
+
+		\begin{equation}
+			\sbr[0]{G:(H \cap K)} \leq \sbr[0]{G:H} \sbr[0]{G:K}.
+		\end{equation}
+
+	\item Consider the system of congruence equations
+
+		\begin{equation}
+			X \equiv a_1 \bmod r_1 , \dots , X \equiv a_n \bmod r_n
+			\label{eq:congruences}
+		\end{equation}
+
+		\noindent where $r_1,\dots,r_n \in \mathbb{Z}$ are pairwise coprime and $a_1,\dots,a_n \in \mathbb{Z}$. Now set 
+
+		\begin{equation}
+			r := r_1 \cdots r_n \qquad \text{and} \qquad s_i := \frac{r}{r_i} 
+		\end{equation}
+
+		\noindent for each $i = 1,\dots,n$ and determine $k_i \in \mathbb{Z}$ such that 
+
+		\begin{equation}
+			k_is_i \equiv 1 \bmod r_i
+		\end{equation}
+
+		\noindent for each $i = 1,\dots,n$. This can be done using the extended euclidean algorithm, i.e. since $s_i$ and $r_i$ are coprime, we find $t_i \in \mathbb{Z}$ such that
+		
+		\begin{equation}
+			k_is_i + t_ir_i = 1.
+		\end{equation}
+		
+		Then 
+
+		\begin{equation}
+			k := k_1s_1a_1 + \dots + k_ns_na_n
+		\end{equation}
+
+		\noindent is a solution of (\ref{eq:congruences}) and the set of solutions of (\ref{eq:congruences}) is $k + r\mathbb{Z}$.
+\end{itemize}

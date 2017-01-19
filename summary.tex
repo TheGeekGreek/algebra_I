@@ -1,264 +1,36 @@
 \input{header.tex}
-\newcommand{\hl}[1]{\textbf{#1}}
+
+\DeclareMathOperator\Char{Char}
 \begin{document}
 \title{Alegbra I - Summary}
 \author{Yannis B\"{a}hni}
 \address[Yannis B\"{a}hni]{University of Zurich, R\"{a}mistrasse 71, 8006 Zurich}
 \email[Yannis B\"{a}hni]{\href{mailto:yannis.baehni@uzh.ch}{yannis.baehni@uzh.ch}}
 
-\maketitle
-\thispagestyle{fancy}
-
 \tableofcontents
 
-\originalsectionstyle
-
-\section{Groups}
+%\section{Groups}
 %Subgroups
-\input{subgroups.tex}
+%\input{subgroups.tex}
 %Homomorphisms
-\input{homomorphisms.tex}
+%\input{homomorphisms.tex}
 %Cyclic Groups
-\input{cyclic_groups.tex}
+%\input{cyclic_groups.tex}
 %Symmetric Groups
-\input{symmetric_groups.tex}
+%\input{symmetric_groups.tex}
 %Automorphisms
-\input{automorphisms.tex}
+%\input{automorphisms.tex}
 %Direct Products
-\input{direct_products.tex}
+%\input{direct_products.tex}
 
 %Latin squares
 
-\begin{lemma}
-	Let $G$ be a group. For every $a \in G$ the mappings
-
-	\begin{equation}
-		\vartheta_a: \begin{cases}
-			G \to G\\
-			x \mapsto ax
-		\end{cases} \qquad \vartheta'_a: \begin{cases}
-			G \to G\\
-			x \mapsto xa
-		\end{cases}
-	\end{equation}
-
-	\noindent are bijections.
-\end{lemma}
-
-\vspace{2mm}
-
-\begin{theorem}
-	
-\end{theorem}
-
-\vspace{2mm}
-
-\begin{lemma}
-	Let $G$ be a group. If $x^2 = 1$ for every $x \in G$ then $G$ is abelian.
-\end{lemma}
-
-\vspace{2mm}
-
-
-\vspace{2mm}
-
-\begin{proposition}
-	In a finite group, the inverse of an element is a positive power of that element.
-\end{proposition}
-
-
-
-\vspace{2mm}
-
-
-\vspace{2mm}
-
-\begin{proposition}
-	If $G = \langle X \rangle$ and the elements of $X$ are pairwise interchangeable then $G$ is abelian. Hence every cyclic group is abelian.
-\end{proposition}
-
-\vspace{2mm}
-
-\begin{definition}
-	Let $G$ be a group. The \emph{order of an element} $x \in G$ is defined by $\abs[0]{\langle x \rangle}$.
-\end{definition}
-
-\vspace{2mm}
-
-\begin{definition}
-	Relative to $H \leq G$ the \emph{left coset} of an element $x \in G$ is the subset $xH$ of $G$; the \emph{right coset} of an element $x \in G$ is the subset $Hx$ of G.
-\end{definition}
-
-\vspace{2mm}
-
-\begin{proposition}
-	The left cosets of $H \leq G$ constitute a partition of $G$ and so do the right cosets.	
-\end{proposition}
-
-\vspace{2mm}
-
-\begin{proposition}
-	The number of left cosets of a subgroup is equal to the number of right cosets.
-\end{proposition}
-
-\vspace{2mm}
-
-\begin{definition}
-	The \emph{index} $\intcc{G:H}$ of $H \leq G$ is the cardinal number of its left or right cosets.
-\end{definition}
-
-\vspace{2mm}
-
-\begin{proposition}\emph{(Lagrange's Theorem)}
-	If $H \leq G$, then $\abs{G} = \intcc{G : H}\abs{H}$. Hence if $\abs{G} < \infty$, the order and the index of a subgroup divide the order of $G$.
-\end{proposition}
-
-\vspace{2mm}
-
-\begin{theorem}
-	In a finite group $G$ we have $g^{\abs[0]{G}} = 1$ for any $g \in G$.
-\end{theorem}
-
-\vspace{2mm}
-
-\begin{definition}
-	Let $N \unlhd G$. The group of all cosets of $N$ is the \emph{quotient group} $G/N$ of $G$ by $N$. The homomorphism $x \mapsto xN = Nx$ is the \emph{canonical projection} of $G$ onto $G/N$.
-\end{definition}
-
-\vspace{2mm}
-
-\begin{proposition}
-	Let $N \unlhd G$. Every subgroup of $G/N$ is the quotient $H/N$ of a unique subgroup $H$ of $G$ that contains $N$.
-\end{proposition}
-
-\vspace{2mm}
-
 \newpage
-\section{Rings}
-
-\begin{definition}
-	An algebraic structure $(R,+,\cdot)$ with binary operations $+,\cdot: R \times R \to R$ is called a \hl{ring} if $(R,+)$ is an ableian group, $(R,\cdot)$ is a semigroup and for all $x,y,z \in R$ it holds that
-
-	\begin{equation*}
-		x(y + z) = xy + xz \qquad \text{and} \qquad (x + y)z = xz + yz.
-	\end{equation*}
-\end{definition}
-
-\vspace{1mm}
-
-\begin{definition}
-	Let $R$ be a ring. A subset $S \subseteq R$ is called \hl{subring} if $(S,+) \leq (R,+)$ and $xy \in S$ for every $x,y \in S$. If $R$ is a ring with unity, then also $1 \in S$.
-\end{definition}
-
-\vspace{1mm}
-
-\begin{definition}
-	A commutative ring $R$ with unity is called an \hl{integral domain} if it has one of the following equivalent properties:
-
-	\begin{enumerate}[label = \textup{(}\roman*\textup{)}]
-		\item \emph{(Cancellation)} $zx = zy$ implies $x = y$ for any $x,y,z \in R$ with $z \neq 0$.
-		\item \emph{(No divisors of zero)} $xy = 0$ implies either $x = 0$ or $y = 0$ for any $x,y \in R$.
-	\end{enumerate}
-\end{definition}
-
-\vspace{1mm}
-
-\begin{definition}
-	A ring $R$ with unity is called a \hl{skew field} if $R^\times = R\setminus\cbr[0]{0}$.
-\end{definition}
-
-\vspace{1mm}
-
-\begin{definition}
-	A commutative skew field is called a \hl{field}.
-\end{definition}
-
-\vspace{1mm}
-
-\begin{definition}
-	A ring $R \neq \cbr[0]{0}$ is called \hl{simple} if $(0)$ and $R$ are the only ideals.
-\end{definition}
-
-\vspace{1mm}
-
-\begin{definition}
-	Let $R$ be a commutative ring. An ideal $P \neq R$ is called a \hl{prime ideal} if $ab \in P$ implies either $a \in P$ or $b \in P$ for $a,b \in R$.
-\end{definition}
-
-\vspace{1mm}
-
-\begin{lemma}
-	An ideal $P \neq R$ of a commutative ring $R$ with unity is a prime ideal if and only if $R/P$ is an integral domain.
-\end{lemma}
-
-\vspace{1mm}
-
-\begin{definition}
-	An ideal $M \neq R$ is called \hl{maximal} if there exists no ideal $I$ such that $M \subsetneq I \subsetneq R$.
-\end{definition}
-
-\vspace{1mm}
-
-\begin{lemma}
-	Let $R$ be a commutative ring with unity. An ideal $M \neq R$ is maximal if and only if $R/M$ is a field.
-\end{lemma}
-
-\vspace{1mm}
-
-\begin{definition}
-	An integral domain $R$ is called a \hl{factorial domain} or \hl{unique factorisation domain} when the following properties hold: 
-
-	\begin{enumerate}[label = \textup{(}\roman*\textup{)}]
-		\item Every element $x \notin R^\times \cup \cbr[0]{0}$ can be written as product of irreducible factors.
-
-		\item If $p_1 \cdots p_n = q_1 \cdots q_m$ for irreducible $p_1,\dots,p_n,q_1,\dots,q_m \in R$, then $n = m$ and there exists $\sigma \in S_n$ such that $p_i \sim q_{\sigma(i)}$ for $i = 1,\dots,n$.
-	\end{enumerate}
-\end{definition}
-
-\vspace{1mm}
-
-\begin{definition}
-	An integral domain is called a \hl{principal ideal domain} if every ideal of $R$ is principal.
-\end{definition}
-
-\vspace{1mm}
-
-\begin{theorem}
-	Every principal ideal domain is a factorial domain.
-\end{theorem}
-
-\vspace{1mm}
-
-\begin{definition}
-	An integral domain $R$ is called an \hl{euclidean domain} if there is a mapping $\varphi: R \setminus \cbr[0]{0} \to \mathbb{N}_0$ with the following property: To any $a,b \in R$ with $b \neq 0$ there exist $q,r \in R$ such that $a = qb + r$ and either $r = 0$ or $\varphi(r) < \varphi(b)$.
-\end{definition}
-
-\vspace{1mm}
-
-\begin{theorem}
-	Every euclidean domain is a principal ideal domain.
-\end{theorem}
-
-\vspace{1mm}
-
-\begin{definition}
-	A ring $R$ is called \hl{noetherian} if it has one of the following equivalent properties:
-
-	\begin{enumerate}[label = \textup{(}\roman*\textup{)}]
-		\item Every ascending chain $A_1 \subseteq A_2 \subseteq \dots$ of ideals $A_i$ of $R$ is stationary, i.e. there exists some $k \in \mathbb{N}$ such that $A_i = A_k$ for every $i \geq k$.
-		\item Every nonempty collection of ideals of R contains a maximal element.
-		\item Every ideal of $R$ is finitely generated.
-	\end{enumerate}
-\end{definition}
-
-\vspace{1mm}
-
-\begin{theorem}\emph{(Hilbert)}
-	If $R$ is a commutative noetherian ring with unity then $R[X]$ is noetherian.
-\end{theorem}
+%Rings
+\input{rings.tex}
 
 \newpage
 %Usefull Stuff
-\input{usefull_stuff.tex}
+%\input{usefull_stuff.tex}
 
 \end{document}

@@ -1,0 +1,209 @@
+\section{Rings}
+\subsection{Basic Definitions, Properties and Examples}
+
+\begin{definition}
+	A commutative ring $R$ with unity is called an \bld{integral domain} if it has one of the following equivalent properties:
+
+	\begin{enumerate}		
+		\item (\bld{Cancellation}) $zx = zy$ implies $x = y$ for any $x,y,z \in R$ with $z \neq 0$.
+		\item (\bld{No divisors of zero}) $xy = 0$ implies either $x = 0$ or $y = 0$ for any $x,y \in R$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	A ring $R$ with identity is called a \bld{skew field} if $R^\times = R\setminus\cbr[0]{0}$.
+\end{definition}
+
+\begin{definition}
+	A commutative skew field is called a \bld{field}.
+\end{definition}
+
+\begin{definition}
+	A ring $R \neq \cbr[0]{0}$ is called \bld{simple} if $(0)$ and $R$ are the only ideals.
+\end{definition}
+
+\begin{definition}
+	Let $R$ be a commutative ring. An ideal $P \neq R$ is called a \bld{prime ideal} if $ab \in P$ implies either $a \in P$ or $b \in P$ for $a,b \in R$.
+\end{definition}
+
+\begin{proposition}
+	An ideal $P \neq R$ of a commutative ring $R$ with identity is a prime ideal if and only if $R/P$ is an integral domain.
+\end{proposition}
+
+\begin{definition}
+	An ideal $M \neq R$ is called \bld{maximal} if there exists no ideal $I$ such that $M \subsetneq I \subsetneq R$.
+\end{definition}
+
+\begin{proposition}
+	Let $R$ be a commutative ring with identity. An ideal $M \neq R$ is maximal if and only if $R/M$ is a field.
+\end{proposition}
+
+\begin{definition}
+	An integral domain $R$ is called a \bld{factorial domain} or \bld{unique factorisation domain} when the following properties hold: 
+
+	\begin{enumerate}
+		\item Every element $x \notin R^\times \cup \cbr[0]{0}$ can be written as product of irreducible factors.
+
+		\item If $p_1 \cdots p_n = q_1 \cdots q_m$ for irreducible $p_1,\dots,p_n,q_1,\dots,q_m \in R$, then $n = m$ and there exists $\sigma \in S_n$ such that $p_i \sim q_{\sigma(i)}$ for $i = 1,\dots,n$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	An integral domain is called a \bld{principal ideal domain} if every ideal of $R$ is principal.
+\end{definition}
+
+\begin{theorem}
+	Every principal ideal domain is a factorial domain.
+\end{theorem}
+
+\begin{definition}
+	An integral domain $R$ is called an \bld{euclidean domain} if there is a mapping $\varphi: R \setminus \cbr[0]{0} \to \mathbb{N}_0$ with the following property: To any $a,b \in R$ with $b \neq 0$ there exist $q,r \in R$ such that $a = qb + r$ and either $r = 0$ or $\varphi(r) < \varphi(b)$.
+\end{definition}
+
+\begin{example}[Euclidean Domains]
+	Consider the \bld{Gaussian integers} $\mathbb{Z}[i]$. The mapping $N: \mathbb{Z}[i] \setminus \cbr[0]{0} \to \mathbb{N}_0$ defined by $N(z) := z \overline{z}$ is a euclidean norm.
+\end{example}
+
+\begin{theorem}
+	Every euclidean domain is a principal ideal domain.
+\end{theorem}
+
+\begin{definition}
+	A ring $R$ is called \bld{noetherian} if it has one of the following equivalent properties:
+
+	\begin{enumerate}
+		\item Every ascending chain $A_1 \subseteq A_2 \subseteq \dots$ of ideals $A_i$ of $R$ is stationary, i.e. there exists some $k \in \mathbb{N}$ such that $A_i = A_k$ for every $i \geq k$.
+		\item Every nonempty collection of ideals of R contains a maximal element.
+		\item Every ideal of $R$ is finitely generated.
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Hilbert]
+	If $R$ is a commutative noetherian ring with identity then $R[X]$ is noetherian.
+\end{theorem}
+
+\begin{example}[Rings]
+	\mbox{}
+	\begin{enumerate}[label = \textup{(}\alph*\textup{)}]
+	\item $\mathbb{H} := \cbr[3]{\begin{pmatrix}
+			z & w\\
+			-\overline{w} & \overline{z} 
+		\end{pmatrix}: z,w \in \mathbb{C}}$ is a subring of $\mathbb{C}^{2 \times 2}$ with identity.
+	\item Let $K$ be a field and $z \in K$. Then $K_z := \cbr[3]{\begin{pmatrix}
+			x & zy\\
+			y & x 
+		\end{pmatrix}: x,y \in K}$ is a commutative subring of $K^{2 \times 2}$. 
+	\item Let $d \in \mathbb{Z} \setminus \cbr[0]{1}$ be square-free, i.e. if $x^2 | d$ for $n \in \mathbb{N}$ then $x = 1$. Then $\mathbb{Z}[\sqrt{d}], \mathbb{Q}[\sqrt{d}] \subseteq \mathbb{C}$ are commutative rings with identity. The mapping
+
+		\begin{equation}
+			\overline{\cdot}:\begin{cases}
+				\mathbb{Q}[\sqrt{d}] \to \mathbb{Q}[\sqrt{d}]\\
+				x + y\sqrt{d} \mapsto x - y\sqrt{d}
+			\end{cases}
+		\end{equation}
+
+		\noindent is an automorphism. Furthermore, the mapping $N: \mathbb{Q}[\sqrt{d}] \to \mathbb{Q}$ defined by $N(z) := z\overline{z}$ is multiplicative. Moreover, for $z \in \mathbb{Z}[\sqrt{d}]$ we have 
+		\begin{equation}
+			z \in \mathbb{Z}[\sqrt{d}]^\times \Leftrightarrow N(z) \in \cbr[0]{\pm 1}.
+		\end{equation}
+
+		$\mathbb{Q}[\sqrt{d}]$ is a field, whereas $\mathbb{Z}[\sqrt{d}]$ is not.
+	\item Let $R$ be a commutative ring with identity. Then 
+		\begin{equation}
+			R[[X]] := \cbr[0]{f : f: \mathbb{N}_0 \to R}
+		\end{equation}
+
+		\noindent is a commutative extension ring with identity of $R[X]$. We have 
+		\begin{equation}
+			R[[X]]^\times = \cbr[3]{\sum_{i \in \mathbb{N}_0} a_i X^i : a_0 \in R^\times}.
+		\end{equation}
+
+	\item Let $R$ be a commutative ring with ideal $A$. Then 
+		\begin{equation}
+			\sqrt{A} := \cbr[0]{x \in R : \exists n \in \mathbb{N} \text{ s.t. } x^n \in A} 
+		\end{equation}
+
+		\noindent is an ideal in $R$. It holds that 
+		\begin{equation}
+			A = \sqrt{A} \Leftrightarrow R/A \text{ does not contain any nilpotent elements} \neq 0.
+		\end{equation}
+
+		Furthermore, for any prime ideal $P$ we have $P = \sqrt{P}$ and 
+		\begin{equation}
+			\sqrt{(0)} = \bigcap_{P \text{ prime ideal}} P.
+		\end{equation}
+	\end{enumerate}	
+\end{example}
+
+\begin{example}[Automorphism of Rings]
+	\mbox{}
+	\begin{enumerate}[label = \textup{(}\alph*\textup{)}]
+		\item Let $R$ be an integral domain and $a \in R^\times$, $b \in R$. Then there exists a unique $\varphi \in \Aut(R[X])$, such that $\varphi |_R = \id_R$ and $\varphi(X) = aX + b$. Furthermore, if $\varphi \in \Aut(R[X])$ with $\varphi|_R = \id_R$, there are $a \in R^\times$, $b \in R$ such that $\varphi(X) = aX + b$.
+		\item Let $R$ be an integral domain and $B \in R[X]$. The mapping
+			\begin{equation}
+				\varepsilon_B:\begin{cases}
+					R[X] \to R[X]\\
+					A \to A(B)
+				\end{cases}
+			\end{equation}
+
+			\noindent is an automorphism if and only if $\deg(B) = 1$ and the leading coefficient of $B$ is a unit in $R$.
+		\item Consider $\mathbb{Q}$ and $\mathbb{R}$ as rings. Then 
+	\begin{equation}
+		\abs[0]{\Aut(\mathbb{Q})} = 1 = \abs[0]{\Aut(\mathbb{R})}
+	\end{equation}
+\end{enumerate}
+\end{example}
+
+\subsection{The Chinese Remainder Theorem}
+\begin{theorem}[Chinese Remainder Theorem]
+	Let $R$ be a ring with identity and $A_1,\dots,A_n$ ideals of $R$ with $A_i + A_j = R$ whenever $i \neq j$. Then the mapping
+	\begin{equation}
+		\Phi: \begin{cases}
+			R/(A_1 \cap \dots \cap A_n) \to R/A_1 \times \dots \times R/A_n\\
+			a + A_1 \cap \dots A_n \mapsto (a + A_1,\dots,a + A_n)
+		\end{cases}
+	\end{equation}
+
+	\noindent is an isomorphism of rings.
+	\label{thm:chinese_remainder}
+\end{theorem}
+
+\begin{proof}
+	Well-definedness and injectivity are easy. For surjectivity proove 
+	\begin{equation}
+		R = A_j + \bigcap_{i \neq j} A_i
+	\end{equation}
+
+	\noindent for $j = 1,\dots,n$.
+\end{proof}
+
+\begin{example}[Application of the Chinese Remainder Theorem \ref{thm:chinese_remainder}]
+Consider the system of congruence equations
+	\begin{equation}
+		X \equiv a_1 \bmod r_1 , \dots , X \equiv a_n \bmod r_n
+			\label{eq:congruences}
+	\end{equation}
+
+\noindent where $r_1,\dots,r_n \in \mathbb{Z}$ are pairwise coprime and $a_1,\dots,a_n \in \mathbb{Z}$. Now set 
+\begin{equation}
+	r := r_1 \cdots r_n \qquad \text{and} \qquad s_i := \frac{r}{r_i} 
+\end{equation}
+
+\noindent for each $i = 1,\dots,n$ and determine $k_i \in \mathbb{Z}$ such that 
+\begin{equation}
+	k_is_i \equiv 1 \bmod r_i
+\end{equation}
+
+\noindent for each $i = 1,\dots,n$. This can be done using the extended euclidean algorithm, i.e. since $s_i$ and $r_i$ are coprime, we find $t_i \in \mathbb{Z}$ such that
+\begin{equation}
+	k_is_i + t_ir_i = 1.
+\end{equation}
+			
+Then 
+\begin{equation}
+	k := k_1s_1a_1 + \dots + k_ns_na_n
+\end{equation}
+
+\noindent is a solution of (\ref{eq:congruences}) and the set of solutions of (\ref{eq:congruences}) is $k + r\mathbb{Z}$.	
+\end{example}

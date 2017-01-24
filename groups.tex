@@ -1,0 +1,54 @@
+\section{Groups}
+
+\subsection{Sylow Theorems}
+
+Suppose $G$ is a finite group and $\abs[0]{G} = p^r m$, where $p \nmid m$. The number $n_p$ of $p$-Sylowgroups fulfills 
+\begin{equation}
+	n_p \mid m \qquad \text{and} \qquad n_p \in \cbr[0]{1 + kp : k \in \mathbb{N}_0}.
+\end{equation}
+
+The Sylow theorems are often used to show that a groups of a certain order cannot be simple, i.e. have no nontrivial normal subgroups. This is done by showing that there exists a unique $p$-Sylowgroup. Since if $H \leq G$ is of unique order, we have that $\iota_g(H) = H$ for any $g \in G$. Proving in general that a group is not simple may be difficult. But most of the time we end up having the oportunity $n_p \in \cbr[0]{1,n}$ where $n \in \mathbb{N}$ where $\abs[0]{G} = p^rm$ and $p \nmid m$. Often the following procedure works. Assume $n_p = n$ and let $X$ be the set of $p$-Sylowgroups. Consider the group action
+	\begin{equation}
+		\begin{cases}
+			G \times X \to X\\
+			(g,P) \mapsto gPg^{-1}
+		\end{cases}.
+	\end{equation}
+
+	This action is well defined, since generally if $P$ is a $p$-Sylow group so is $gPg^{-1}$ for any $g \in G$ since $gPg^{-1} = \iota_g(P)$ where 
+	\begin{equation}
+		\iota_g:\begin{cases}
+			G \to G\\
+			x \mapsto gxg^{-1}
+		\end{cases}
+	\end{equation}
+	
+	\noindent is the so-called inner automorphism. Now if $\abs[0]{P} = p^r$ then $\abs[0]{gPg^{-1}} = p^r$ and clearly $gPg^{-1} \leq G$. Since $\abs[0]{X} = n$ we have $S_X \cong S_n$ as one trivially sees by considering the isomorphism 
+	\begin{equation}
+		\iota:\begin{cases} S_n \to S_X\\
+			\sigma \mapsto \begin{pmatrix}x_1 & \dots & x_n\\
+				x_{\sigma(1)} & \dots & x_{\sigma(n)}
+			\end{pmatrix}
+		\end{cases}
+	\end{equation}
+
+	Therefore by considering the permutation representation of the group action above 
+	\begin{equation}
+		\lambda:\begin{cases}
+			G \to S_X\\
+			g \mapsto \lambda_g
+		\end{cases}
+		\qquad
+		\text{where} 
+		\qquad 
+		\lambda_g:\begin{cases}
+			X \to X\\
+			P \mapsto gPg^{-1}
+		\end{cases}
+	\end{equation}
+
+	\noindent which is a homomorphism and using that the composition of homomorphisms is again a homomorphism, we get a homomorphism 
+	\begin{equation}
+		\lambda': G \to S_n
+	\end{equation}
+
